@@ -90,7 +90,9 @@ def compute_cost(a,Y):
     cost = 1*np.sum(cost)
     return cost
 
-""" apply sigmoid/activation function to inner product: w.Tx """
+# RELU, SOFTMAX and TANH SHOULD BE USED #
+
+""" apply sigmoid activation function to inner product: w.Tx """
 def activation(theta):
     theta = 1 / (1 + np.exp(-theta))
     return theta
@@ -300,19 +302,7 @@ def main():
     plt.xlabel(' number of iterations (100s) ')
     plt.ylabel('cost')
     plt.show
-    # IMPORANT VERY VERY IMPORTANT #
-    """
-    !!!! in the DeepNeuralSafe, we have the same number of 
-    !!!! training example for trainX, trainY, and final
-    !!!! here, we only get given trainX and trainY
-    !!!! and here, trainY is Safe's final
-    !!!! We have to cut b1 and b2's dimension
-    !!!! and this will not affect any computation 
-    !!!! or well-defined NN since for each ith component
-    !!!! of of N dimensional b1, b2 vector, that represents
-    !!!! b(i) for each training example X(1),..,X(M)
-    """
-    # IMPORTANT OK MIRU? WHY AM I TALKING TO MY SELF...#
+    
     ''' evaluate and print accuracy of our model '''
     print("comeon...: ", len(testY))
     newDim = len(testY)
